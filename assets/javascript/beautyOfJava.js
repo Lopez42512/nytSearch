@@ -1,5 +1,5 @@
 
-var search = prompt("enter");
+var search = $("#searchTeram");
 var getArticle = function (search) {
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&api-key=IMIcpmhbfn3Fzie5MCJtfer4qJbYfnlB";
     
@@ -12,7 +12,8 @@ var getArticle = function (search) {
         for(var i = 0; i < 6; i++);{
             var url = $("<a>" + JSON.stringify(response.response.docs[i].web_url + "<a>"));
             add.append(url);
-        $("#help").append(add)}
+        $("#result").append(add)}
+        console.log(response)
     })
 }
 getArticle(search);
