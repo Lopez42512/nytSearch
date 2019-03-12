@@ -16,4 +16,8 @@ var getArticle = function (search) {
         console.log(response)
     })
 }
-getArticle(search);
+
+$('#submit').on('click',function() {
+    getArticle(search.val());
+    console.log("hello")
+})
